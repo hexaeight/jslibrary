@@ -28,7 +28,7 @@
         }
 
         function generateCodeVerifier() {
-            var code_verifier = generateRandomString(32)
+            var code_verifier = generateRandomString(32);
             return code_verifier;
         }
 
@@ -42,11 +42,11 @@
         }
 
         async function generateCodeChallenge(code_verifier) {
-            return code_challenge = base64URL(CryptoJS.SHA256(code_verifier))
+            return code_challenge = base64URL(CryptoJS.SHA256(code_verifier));
         }
 
         function base64URL(string) {
-            return string.toString(CryptoJS.enc.Base64).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_')
+            return string.toString(CryptoJS.enc.Base64).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
         }
 
         async function postdata(url, postdata) {
