@@ -142,6 +142,7 @@
                         let cv = generateCodeVerifier();
                         console.log("Generated Verification Code:" + cv);
 
+                        
                         $("#login-hexaeight-button").click(function (e) {
                             let pushresp = postdata(location.protocol + "//" + servername + path + "login", recievedataurl + "," + cv);
                             console.log(pushresp);
@@ -161,8 +162,8 @@
                             });
                         });
 
-                    }
 
+                   
                     var request = "";
                     $.get(location.protocol + "//" + servername + path + "login", function (resp, status) {
 
@@ -195,6 +196,8 @@
                                         codebutton.setAttribute("data-clipboard-text", qrcodedata);
                                         codebutton.disabled = false;
                                     });
+                                  }
+
                                 });
                             });
 
