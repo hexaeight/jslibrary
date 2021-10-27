@@ -77,10 +77,10 @@
             $(document).ready(function () {
 
                 $.when(
-                    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"),
+                    $.getScript("https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"),
                     $.getScript("https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"),
                     //$.getScript( "http://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js" ),
-                    $.getScript("http://cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js"),
+                    $.getScript("https://cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js"),
                     $.Deferred(function (deferred) {
                         $(deferred.resolve);
                     })
