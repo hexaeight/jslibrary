@@ -197,7 +197,7 @@
                                         codebutton.setAttribute("data-clipboard-text", qrcodedata);
                                         codebutton.disabled = false;
                                     });
-                                  }
+                                  });
 
                                 });
                             });
