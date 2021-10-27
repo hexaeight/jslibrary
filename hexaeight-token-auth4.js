@@ -176,7 +176,7 @@
                         else
                         {
 
-
+                            console.log("Starting User Authentication Process");
                             cc.then(function (challenge) {
                                 console.log("Generated Challenge Code:" + challenge);
                                 let url = 'https://hexaeight.com/get-new-pretoken';
