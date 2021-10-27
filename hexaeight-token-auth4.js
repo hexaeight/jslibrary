@@ -141,6 +141,9 @@
 
                         let cv = generateCodeVerifier();
                         console.log("Generated Verification Code:" + cv);
+                        let cc = generateCodeChallenge(cv);
+                        let qrcodedata = "";
+
 
                         
                         $("#login-hexaeight-button").click(function (e) {
@@ -173,8 +176,6 @@
                         else
                         {
 
-                            let cc = generateCodeChallenge(cv);
-                            let qrcodedata = "";
 
                             cc.then(function (challenge) {
                                 console.log("Generated Challenge Code:" + challenge);
