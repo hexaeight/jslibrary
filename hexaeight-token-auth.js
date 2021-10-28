@@ -191,9 +191,9 @@
                                     method: 'post',
                                     body: challenge + "|" + clientappcode,
                                 }).then(response => response.text()).then(response => {
-                                    let qresp = postdata(datasinkurl + postdataurl, "HEToken|" + response);
+                                    let qresp = postdata(datasinkprotocol +"://" + datasinkurl + "/" +postdataurl, "HEToken|" + response);
                                     qresp.then(function () {
-                                        qrcodedata = "Hexa8UAUTH|" + qrcodeid + "|" + datasinkprotocol + "|" + datasinkurl + postdataurl + "|" + datasinkurl + recievedataurl;
+                                        qrcodedata = "Hexa8UAUTH|" + qrcodeid + "|" + datasinkprotocol + "|" + datasinkurl + "/" + postdataurl + "|" + datasinkurl + "/" + recievedataurl;
                                         console.log("Generated QRCode");
                                         document.getElementById("display-hexaeight-qrcode").innerHTML = "";
                                         $('#display-hexaeight-qrcode').qrcode({
