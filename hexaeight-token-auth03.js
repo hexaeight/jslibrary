@@ -60,7 +60,8 @@
         }).then(response => {
             console.log("Data Posted successfully.");
         }).catch(err => {
-            console.log("Posting Data unsuccessful.");
+            console.log("Posting Data unsuccessful."+err);
+	    alert("Error Encountered");
         });
     }
 
