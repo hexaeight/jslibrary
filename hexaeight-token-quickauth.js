@@ -149,7 +149,6 @@
                         });
 
                         let cv = generateCodeVerifier();
-                        console.log("Generated Verification Code:" + cv);
                         let cc = generateCodeChallenge(cv);
                         let qrcodedata = "";
 
