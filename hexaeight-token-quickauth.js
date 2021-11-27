@@ -177,8 +177,11 @@
 			                        }
 						else
 						{
-							 alert(resp);
-							 location.reload();
+							 //alert(resp);
+							 //location.reload();
+							if(confirm(resp)){
+								document.location.reload(true);
+							}
 						}
 					});
 
