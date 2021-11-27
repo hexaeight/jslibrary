@@ -177,6 +177,7 @@
 			                        }
 						else
 						{
+							 alert(resp);
 							 location.reload();
 						}
 					});
