@@ -46,7 +46,7 @@ function widgetQRCode(_this,_fetchCaptchaUrl,_captchaValidationUrl) {
                 captchaUrl1 = split[0];
                 captchaUrl2 = split[3]+'|'+split[4];
                 $('.loader').hide();
-                var modalpopup = "<div id='myModal' class='modal fade' role='dialog'><div class='modal-dialog'><div class='modal-content'><div class='modal-header center'><h3 class='modal-title'>Use <a href='https://www.hexaeight.com/help/how-to-create-your-first-digital-token.html' target='_blank'>HexaEight Digital Token</a> To Scan This QR Code</h3></div><div class='modal-body'><div class='loader'></div><div id='qrcode'></div></div></div></div></div>"; 
+                var modalpopup = "<div id='myModal' class='modal fade' role='dialog'><div class='modal-dialog'><div class='modal-content'><div class='modal-header align-center'><h4 class='modal-title'>Use <a href='https://www.hexaeight.com/help/how-to-create-your-first-digital-token.html' target='_blank'>HexaEight Digital Token</a> To Scan This QR Code</h4></div><div class='modal-body'><div class='loader'></div><div id='qrcode'></div></div></div></div></div>"; 
                 $('body').append(modalpopup);   
                 $('#myModal').modal({backdrop: 'static', keyboard: false});
                 $("#myModal").modal('show');
@@ -58,7 +58,7 @@ function widgetQRCode(_this,_fetchCaptchaUrl,_captchaValidationUrl) {
                     colorLight: "#ffffff",
                     correctLevel: QRCode.CorrectLevel.H
                 });          
-                var scanMe = "<div><span> <a href='" & urlcode & "' target='_blank'>Scan Me</a></span></div>";
+                var scanMe = "<div><span> <a href='" + urlcode + "' target='_blank'>Scan Me</a></span></div>";
                 displayQR.insertAdjacentHTML("beforeend",scanMe);  
                 var fName = "<div><div>EnterCaptcha: </div><input type=\"text\" class=\"fieldname\" /></div>";
                 var button = "<div><button id=\"submitQRCode\" >OK</button></div>";
