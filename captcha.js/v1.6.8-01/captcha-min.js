@@ -42,6 +42,7 @@ function widgetQRCode(_this,_fetchCaptchaUrl,_captchaValidationUrl) {
             .then(response => {
                 var split = response.split('|');
                 var qrcode = 'Hexa8BCODE|'+split[1]+'|'+split[2];
+                var urlcode = 'https://www.hexaeight.com/qrcode/Hexa8BCODE|'+split[1]+'|'+split[2];
                 captchaUrl1 = split[0];
                 captchaUrl2 = split[3]+'|'+split[4];
                 $('.loader').hide();
@@ -57,7 +58,7 @@ function widgetQRCode(_this,_fetchCaptchaUrl,_captchaValidationUrl) {
                     colorLight: "#ffffff",
                     correctLevel: QRCode.CorrectLevel.H
                 });          
-                var scanMe = "<div><span>Scan Me</span></div>";
+                var scanMe = "<div><span> <a href='" & urlcode & "' target='_blank'>Scan Me</a></span></div>";
                 displayQR.insertAdjacentHTML("beforeend",scanMe);  
                 var fName = "<div><div>EnterCaptcha: </div><input type=\"text\" class=\"fieldname\" /></div>";
                 var button = "<div><button id=\"submitQRCode\" >OK</button></div>";
