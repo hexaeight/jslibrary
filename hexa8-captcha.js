@@ -6,6 +6,9 @@ $("button").on('click',function() {
     var me = document.querySelector('script[fetchurl][verifyurl]');
     var fetchCaptcha = me.getAttribute('fetchurl');
     var captchaValidation = me.getAttribute('verifyurl');
+    fetchurl = 'https://captcha.hexaeight.com:8443/api/fetch-captcha-for-email';
+    captchaValidation='https://captcha.hexaeight.com:8443/api/verify-captcha-for-email';
+
 
     var attr = $(this).attr('data-hexaeight-input');
     if(typeof attr !== typeof undefined && attr !== false) {
