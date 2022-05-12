@@ -1,8 +1,11 @@
 var timer;
 $("button").on('click',function() {
     $(this).addClass('opacity');
-    var fetchCaptcha = $('#fetchCaptcha').val();
-    var captchaValidation = $('#captchaValidation').val();
+    $(this).css('pointer-events','none');
+    $(this).css('opacity','0.5');
+    var me = document.querySelector('script[fetchurl][verifyurl]');
+    var fetchCaptcha = me.getAttribute('fetchurl');
+    var captchaValidation = me.getAttribute('verifyurl');
 
     var attr = $(this).attr('data-hexaeight-input');
     if(typeof attr !== typeof undefined && attr !== false) {
@@ -42,7 +45,7 @@ function widgetQRCode(_this,_fetchCaptchaUrl,_captchaValidationUrl) {
                 captchaUrl1 = split[0];
                 captchaUrl2 = split[3]+'|'+split[4];
                 $('.loader').hide();
-                var modalpopup = "<div id='myModal' class='modal fade' role='dialog'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><h4 class='modal-title'>QR Code and Captacha alidation</h4></div><div class='modal-body'><div class='loader'></div><div id='qrcode'></div></div></div></div></div>"; 
+                var modalpopup = "<div id='myModal' class='modal fade' role='dialog'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><h4 class='modal-title'>QR Code and Captacha Validation</h4></div><div class='modal-body'><div class='loader'></div><div id='qrcode'></div></div></div></div></div>"; 
                 $('body').append(modalpopup);
                 $('#myModal').modal({backdrop: 'static', keyboard: false});
                 $("#myModal").modal('show');
@@ -67,7 +70,9 @@ function widgetQRCode(_this,_fetchCaptchaUrl,_captchaValidationUrl) {
                 }, 3000);  
                 var timer  = setTimeout(function() {
                     $("#myModal").modal('hide');
-                    $(_this).removeClass('opacity');
+                    $(_this).removeClass('opacity');                    
+                    $(_this).css('pointer-events','cursor');
+                    $(_this).css('opacity','');
                     $(_this.previousElementSibling).prop('disabled', false);
                     $('#myModal').remove();
                     $('.modal-backdrop').remove();
@@ -77,12 +82,16 @@ function widgetQRCode(_this,_fetchCaptchaUrl,_captchaValidationUrl) {
             .catch(function(){
                 console.error;
                 $('.loader').hide();
-                $(_this).removeClass('opacity');
+                $(_this).removeClass('opacity');               
+                $(_this).css('pointer-events','cursor');
+                $(_this).css('opacity','');
                 $(_this.previousElementSibling).prop('disabled', false);
             })
         } else {
             alert('Please enter the input value');
-            $(_this).removeClass('opacity');
+            $(_this).removeClass('opacity');               
+            $(_this).css('pointer-events','cursor');
+            $(_this).css('opacity','');
         }
 }
 function captchaValidation(captchaUrl1,captchaUrl2,_captchaValidationUrl,_this) {
@@ -115,7 +124,9 @@ function captchaValidation(captchaUrl1,captchaUrl2,_captchaValidationUrl,_this) 
                 $('.modal-backdrop').remove();
                 $('body').removeClass('modal-open');
                 clearTimeout(timer);
-                $(_this).removeClass('opacity');
+                $(_this).removeClass('opacity');               
+                $(_this).css('pointer-events','cursor');
+                $(_this).css('opacity','');
             }
         })
         .catch(console.error)
