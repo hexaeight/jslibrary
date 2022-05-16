@@ -66,7 +66,7 @@ function widgetQRCode(_this,_fetchCaptchaUrl,_captchaValidationUrl,_captchaButto
                 });          
                 var scanMe = "<div><span> <a href='"+urlcode+"' target='_blank'>Scan Me</a></span></div>";
                 displayQR.insertAdjacentHTML("beforeend",scanMe);  
-                var fName = "<div><div>EnterCaptcha: </div><input type=\"password\" class=\"fieldname form-control text-center\" /></div>";
+                var fName = "<div><div>EnterCaptcha: </div><input type=\"password\" class=\"fieldname text-center\" /></div>";
                 var button = "<div><button id=\"submitQRCode\" class=\"btn btn-primary\">OK</button></div>";
                 displayQR.insertAdjacentHTML("beforeend",fName);  
                 setTimeout(function(){ 
