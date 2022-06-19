@@ -19,11 +19,11 @@ HexaEightCaptcha.prototype = (function() {
 	  return this.split('').reverse().join('');
 	}
 
-	export const EncryptBearerMessage = (data, captchasecret, codeverifier) =>  {
+	function EncryptBearerMessage (data, captchasecret, codeverifier) {
 		return AES_Fast_Encrypt(codeverifier + captchasecret + codeverifier, data);
 	}
 
-	export const DecryptBearerMessage = (encrypteddata, captchasecret, codeverifier) => {
+	function DecryptBearerMessage (encrypteddata, captchasecret, codeverifier) {
 		return AES_Fast_Decrypt(codeverifier + captchasecret + codeverifier, encrypteddata);
 	}
 
