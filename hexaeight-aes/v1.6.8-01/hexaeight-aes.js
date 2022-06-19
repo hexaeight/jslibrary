@@ -59,4 +59,4 @@ function AES_Fast_Decrypt(password, encrypteddata) {
 	return CryptoJS.AES.decrypt(encrypteddata, key, { iv: iv });
 }
 
-export { EncryptBearerMessage, DecryptBearerMessage };
+export { EncryptBearerMessage, DecryptBearerMessage }
