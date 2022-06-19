@@ -1,3 +1,4 @@
+var HexaEight = new HexaEightCaptcha("");
 var fenc = HexaEight.EncryptBearerMessage("Sample Data Encryption","Test5","www");
 console.log(fenc.toString());
 var fdec = HexaEight.DecryptBearerMessage(fenc.toString(),"Test5","www");
