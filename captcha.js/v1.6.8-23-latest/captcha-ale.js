@@ -149,7 +149,7 @@ HexaEightCaptcha.prototype = (function() {
 	}
 
 	function EncryptBearerMessage (data) {
-		return FetchEncryptedCodeVerifier() + AES_Fast_Encrypt(data);
+		return FetchEncryptedCodeVerifier() + "." + AES_Fast_Encrypt(data);
 	}
 
 	function DecryptBearerMessage (encrypteddata) {
