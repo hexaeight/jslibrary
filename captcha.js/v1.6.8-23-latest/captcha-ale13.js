@@ -212,8 +212,13 @@ HexaEightCaptcha.prototype = (function() {
 		DecryptBearerMessage: DecryptBearerMessage,
 		QuickEncryptBearerMessage: QuickEncryptBearerMessage,
 		QuickDecryptBearerMessage: QuickDecryptBearerMessage,
-		AES_Default_Encrypt:AES_Default_Encrypt,
-		AES_Default_Decrypt:AES_Default_Decrypt
+		AES_Default_Encrypt:AES_Quick_Encrypt,
+		AES_Default_Decrypt:AES_Quick_Decrypt,
+		AES_Fast_Encrypt:AES_Fast_Encrypt,
+		AES_Fast_Decrypt:AES_Fast_Decrypt
+
 	};
 
 })();
+
+
