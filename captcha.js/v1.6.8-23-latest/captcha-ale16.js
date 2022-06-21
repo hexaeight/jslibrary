@@ -143,9 +143,6 @@ HexaEightCaptcha.prototype = (function() {
 	            })
 	            .then(response => {
 			bearertoken=response;
-			console.log(bearertoken);
-			console.log(response);
-		
         	    })
 	            .catch(function() {
         	        console.error();
