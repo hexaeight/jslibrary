@@ -70,9 +70,6 @@ HexaEightCaptcha.prototype = (function() {
 		return AES_Default_Encrypt(email.trim() + "|" + codeverifier.toString());			
 	}
 
-	function FetchQuickEncryptedCodeVerifier() {
-		return AES_Default_Encrypt(email.trim() + "|" + codeverifier.toString());			
-	}
 
 	function GetSessionAccessToken() {
 		return bearertoken;			
@@ -178,18 +175,15 @@ HexaEightCaptcha.prototype = (function() {
 	}
 
 	function EncryptBearerMessage (data) {
-		return FetchEncryptedCodeVerifier() + "." + AES_Fast_Encrypt(data);
+		if (aleconfig == "Quick") {
+			return FetchEncryptedCodeVerifier() + "." + AES_Fast_Encrypt(data) + ".Q";
+		}
+		else {
+			return FetchEncryptedCodeVerifier() + "." + AES_Fast_Encrypt(data) + ".D";
+		}
 	}
 
 	function DecryptBearerMessage (encrypteddata) {
-		return AES_Fast_Decrypt(encrypteddata);
-	}
-
-	function QuickEncryptBearerMessage (data) {
-		return FetchQuickEncryptedCodeVerifier() + "." + AES_Fast_Encrypt(data);
-	}
-
-	function QuickDecryptBearerMessage (encrypteddata) {
 		return AES_Fast_Decrypt(encrypteddata);
 	}
 
@@ -220,8 +214,6 @@ HexaEightCaptcha.prototype = (function() {
 		GetSessionAccessToken: GetSessionAccessToken,
 		EncryptBearerMessage: EncryptBearerMessage,
 		DecryptBearerMessage: DecryptBearerMessage,
-		QuickEncryptBearerMessage: QuickEncryptBearerMessage,
-		QuickDecryptBearerMessage: QuickDecryptBearerMessage,
 		AES_Default_Encrypt:AES_Default_Encrypt,
 		AES_Default_Decrypt:AES_Default_Decrypt,
 		AES_Fast_Encrypt:AES_Fast_Encrypt,
