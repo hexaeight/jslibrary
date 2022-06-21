@@ -35,7 +35,6 @@ function widgetQRCode(_this, _fetchCaptchaUrl, _captchaValidationUrl, _captchaBu
 	const qrcoderequest = this.HexaEight.FetchQRCodeFromTokenServer(_fetchCaptchaUrl);
 	qrcoderequest.then(resp => {
                 	var qrcode = this.HexaEight.FetchQRCodeForDisplay();
-			console.log(qrcode);
 	        	        var urlcode = 'https://www.hexaeight.com/qrcode/' + qrcode;
         		        $('.loader').hide();
 	        	        var modalpopup = "<div id='myModal' class='modal fade' role='dialog'><div class='modal-dialog'><div class='modal-content'><div class='modal-header d-block'><h4 class='modal-title text-center'>Use <a href='https://www.hexaeight.com/help/how-to-create-your-first-digital-token.html' target='_blank'>HexaEight Digital Token</a> To Scan This QR Code</h4></div><div class='modal-body'><div class='loader'></div><div id='qrcode'></div></div></div></div></div>";
@@ -97,11 +96,8 @@ function captchaValidation(_captchaValidationUrl, _captchaButtonSuccessUrl, _cap
 		const trequest = this.HexaEight.FetchSessionAccessToken(_captchaValidationUrl);
 		trequest.then(resp => {
 			accesstoken = this.HexaEight.GetSessionAccessToken()
-			console.log(accesstoken);
-
 			if (accesstoken != '') {
 				    var encryptedmessage = this.HexaEight.EncryptBearerMessage(_captchaButtonRequestMessage);
-				    console.log("Enc:" + encryptedmessage);
 		                    fetch(_captchaButtonSuccessUrl, {
                 		            method: 'POST',
 		                            headers: {
@@ -121,7 +117,6 @@ function captchaValidation(_captchaValidationUrl, _captchaButtonSuccessUrl, _cap
 		                            }
 		                        })
 		                        .then(response => {
-					    console.log("Resp:"+ response);
                 		            if (response == 'Ok') {
 		                                $("#myModal").modal('hide');
 		                                $('#myModal').remove();
